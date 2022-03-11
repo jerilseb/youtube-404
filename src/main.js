@@ -23,5 +23,4 @@ async function main() {
     ReactDOM.render(<NotFound />, newEl);
 }
 
-
 main();

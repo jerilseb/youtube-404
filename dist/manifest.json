@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube 404",
+    "description": "A minimal example of a chrome extension using manifest v3",
+    "version": "0.0.1",
+    "content_scripts": [{
+        "js": ["bundle.js"],
+        "css": ["bundle.css"],
+        "matches": ["https://www.youtube.com/*"],
+        "run_at": "document_idle"
+    }]
+}
