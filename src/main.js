@@ -13,14 +13,15 @@ function sleep(ms) {
 
 async function main() {
     await sleep(1000);
-    const element = document.querySelector('#primary.ytd-two-column-browse-results-renderer');
-    console.log(element);
+    const element = document.querySelector('ytd-browse[page-subtype="home"] #primary.ytd-two-column-browse-results-renderer');
     
-    const newEl = document.createElement("div");
-    newEl.setAttribute("class", "react-root");
-
-    element.insertAdjacentElement('beforebegin', newEl);
-    ReactDOM.render(<NotFound />, newEl);
+    if(element) {
+        const newEl = document.createElement("div");
+        newEl.setAttribute("class", "react-root");
+    
+        element.insertAdjacentElement('beforebegin', newEl);
+        ReactDOM.render(<NotFound />, newEl);
+    }
 }
 
 main();
